@@ -49,37 +49,28 @@ const timelineData = [
 
 export function Timeline() {
   return (
-    <div className="py-20">
+    <div className="py-20 max-w-4xl mx-auto px-4">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 neon-glow text-cyber-cyan">
+        <h2 className="font-pixel text-4xl md:text-5xl font-bold text-white mb-4 gradient-text">
           My Journey
         </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-dark-300 text-lg max-w-2xl mx-auto">
           From student to aspiring software developer - a timeline of my growth in technology and programming
         </p>
       </div>
       
-      <div className="overflow-x-auto pb-8">
-        <div className="flex items-start min-w-max px-8">
-          {timelineData.map((item, index) => (
-            <TimelineItem
-              key={index}
-              year={item.year}
-              title={item.title}
-              description={item.description}
-              technologies={item.technologies}
-              icon={item.icon}
-              index={index}
-            />
-          ))}
-        </div>
-      </div>
-      
-      {/* Scroll hint */}
-      <div className="text-center mt-8">
-        <p className="text-cyber-purple text-sm animate-pulse">
-          ← Scroll horizontally to explore my journey →
-        </p>
+      <div className="space-y-8">
+        {timelineData.map((item, index) => (
+          <TimelineItem
+            key={index}
+            year={item.year}
+            title={item.title}
+            description={item.description}
+            technologies={item.technologies}
+            icon={item.icon}
+            index={index}
+          />
+        ))}
       </div>
     </div>
   );

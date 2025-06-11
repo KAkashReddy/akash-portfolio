@@ -6,44 +6,43 @@ import { ContactSection } from '../components/ContactSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-cyber-dark">
+    <div className="min-h-screen bg-dark-900">
       <ScrollProgressBar />
       
       {/* Hero Section */}
       <div className="min-h-screen flex flex-col justify-center items-center px-4">
         <GlitchHeader 
           text="K AKASH REDDY" 
-          className="mb-8"
+          className="mb-8 animate-fade-in-scale"
         />
         
-        <div className="text-center space-y-4 max-w-2xl">
-          <p className="text-xl md:text-2xl text-cyber-cyan font-light tracking-wide">
+        <div className="text-center space-y-4 max-w-2xl animate-slide-up" style={{ animationDelay: '0.5s' }}>
+          <p className="font-pixel text-xl md:text-2xl text-accent-blue font-light tracking-wide">
             Information Science & Engineering Student
           </p>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-dark-300 text-lg leading-relaxed">
             Motivated CSE student with expertise in software development, data analysis, cybersecurity, and machine learning. 
             Seeking opportunities to leverage technical skills and academic knowledge in real-world projects.
           </p>
           
           <div className="flex justify-center gap-4 mt-8">
-            <div className="w-2 h-2 bg-cyber-purple rounded-full animate-pulse"></div>
-            <div className="w-2 h-2 bg-cyber-cyan rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-            <div className="w-2 h-2 bg-cyber-magenta rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="w-3 h-3 bg-accent-blue rounded-full animate-bounce-subtle"></div>
+            <div className="w-3 h-3 bg-accent-red rounded-full animate-bounce-subtle" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-3 h-3 bg-accent-orange rounded-full animate-bounce-subtle" style={{ animationDelay: '0.4s' }}></div>
+            <div className="w-3 h-3 bg-accent-emerald rounded-full animate-bounce-subtle" style={{ animationDelay: '0.6s' }}></div>
           </div>
         </div>
       </div>
       
       {/* Timeline Section */}
-      <div className="max-w-full">
-        <Timeline />
-      </div>
+      <Timeline />
       
       {/* Contact Section */}
       <ContactSection />
       
       {/* Footer */}
-      <div className="text-center py-12 border-t border-cyber-purple/20">
-        <p className="text-gray-500 text-sm">
+      <div className="text-center py-12 border-t border-dark-700">
+        <p className="text-dark-400 text-sm">
           &copy; 2024 K Akash Reddy. Ready to innovate and build the future.
         </p>
       </div>

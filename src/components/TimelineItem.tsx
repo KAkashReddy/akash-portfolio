@@ -12,54 +12,48 @@ interface TimelineItemProps {
 
 export function TimelineItem({ year, title, description, technologies, icon, index }: TimelineItemProps) {
   const isEven = index % 2 === 0;
+  const animationClass = isEven ? 'animate-slide-in-left' : 'animate-slide-in-right';
   
   return (
-    <div className="relative flex-shrink-0 w-80 md:w-96 mx-8">
+    <div className={`relative flex items-center gap-8 ${animationClass}`} style={{ animationDelay: `${index * 0.2}s` }}>
       {/* Timeline line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-cyber-purple to-cyber-cyan opacity-60"></div>
+      <div className="absolute left-8 top-16 w-0.5 h-full bg-gradient-to-b from-accent-blue to-accent-red opacity-60"></div>
       
       {/* Timeline dot */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-8 w-4 h-4 bg-cyber-magenta rounded-full border-2 border-cyber-purple shadow-lg animate-glow-pulse z-10"></div>
+      <div className="relative z-10 w-16 h-16 bg-dark-800 border-2 border-accent-blue rounded-lg flex items-center justify-center text-accent-blue text-xl">
+        {icon}
+      </div>
       
       {/* Content card */}
-      <div className={`relative ${isEven ? 'pt-24' : 'pt-8'}`}>
-        <div className="cyber-border rounded-lg p-6 bg-black/20 backdrop-blur-sm hover:bg-black/30 transition-all duration-300 group">
-          {/* Year badge */}
-          <div className="inline-block px-3 py-1 bg-gradient-to-r from-cyber-purple to-cyber-cyan text-black text-sm font-bold rounded-full mb-4">
-            {year}
-          </div>
-          
-          {/* Icon */}
-          {icon && (
-            <div className="text-cyber-cyan mb-4 text-2xl">
-              {icon}
-            </div>
-          )}
-          
-          {/* Title */}
-          <h3 className="text-xl font-bold text-white mb-3 neon-glow text-cyber-cyan group-hover:text-cyber-magenta transition-colors duration-300">
-            {title}
-          </h3>
-          
-          {/* Description */}
-          <p className="text-gray-300 mb-4 leading-relaxed">
-            {description}
-          </p>
-          
-          {/* Technologies */}
-          {technologies && (
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, i) => (
-                <span 
-                  key={i}
-                  className="px-2 py-1 text-xs bg-cyber-purple/20 text-cyber-purple border border-cyber-purple/30 rounded"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          )}
+      <div className="flex-1 tech-card rounded-lg p-6">
+        {/* Year badge */}
+        <div className="inline-block px-3 py-1 bg-gradient-to-r from-accent-blue to-accent-red text-white text-sm font-bold rounded mb-4">
+          {year}
         </div>
+        
+        {/* Title */}
+        <h3 className="text-xl font-bold text-white mb-3 font-pixel">
+          {title}
+        </h3>
+        
+        {/* Description */}
+        <p className="text-dark-300 mb-4 leading-relaxed">
+          {description}
+        </p>
+        
+        {/* Technologies */}
+        {technologies && (
+          <div className="flex flex-wrap gap-2">
+            {technologies.map((tech, i) => (
+              <span 
+                key={i}
+                className="px-3 py-1 text-xs bg-dark-700 text-accent-blue border border-dark-600 rounded-full hover:border-accent-blue transition-colors"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
