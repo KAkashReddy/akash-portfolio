@@ -2,6 +2,7 @@
 import { ScrollProgressBar } from '../components/ScrollProgressBar';
 import { GlitchHeader } from '../components/GlitchHeader';
 import { Timeline } from '../components/Timeline';
+import { ContactSection } from '../components/ContactSection';
 
 const Index = () => {
   return (
@@ -17,11 +18,11 @@ const Index = () => {
         
         <div className="text-center space-y-4 max-w-2xl">
           <p className="text-xl md:text-2xl text-cyber-cyan font-light tracking-wide">
-            Software Developer & Tech Innovator
+            Information Science & Engineering Student
           </p>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Crafting digital experiences through code, one algorithm at a time. 
-            Exploring the intersection of technology and human creativity.
+            Motivated CSE student with expertise in software development, data analysis, cybersecurity, and machine learning. 
+            Seeking opportunities to leverage technical skills and academic knowledge in real-world projects.
           </p>
           
           <div className="flex justify-center gap-4 mt-8">
@@ -37,10 +38,13 @@ const Index = () => {
         <Timeline />
       </div>
       
+      {/* Contact Section */}
+      <ContactSection />
+      
       {/* Footer */}
       <div className="text-center py-12 border-t border-cyber-purple/20">
         <p className="text-gray-500 text-sm">
-          &copy; 2024 K Akash Reddy. Crafted with passion and caffeine.
+          &copy; 2024 K Akash Reddy. Ready to innovate and build the future.
         </p>
       </div>
     </div>
