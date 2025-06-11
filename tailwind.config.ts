@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cyber: {
+					purple: '#8B5CF6',
+					cyan: '#06B6D4',
+					magenta: '#EC4899',
+					dark: '#0F0F23',
+					darker: '#0A0A18'
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				mono: ['JetBrains Mono', 'monospace'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +95,50 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				glitch: {
+					'0%': {
+						transform: 'translate(0)',
+					},
+					'20%': {
+						transform: 'translate(-2px, 2px)',
+					},
+					'40%': {
+						transform: 'translate(-2px, -2px)',
+					},
+					'60%': {
+						transform: 'translate(2px, 2px)',
+					},
+					'80%': {
+						transform: 'translate(2px, -2px)',
+					},
+					'100%': {
+						transform: 'translate(0)',
+					},
+				},
+				flicker: {
+					'0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
+						opacity: '0.99',
+					},
+					'20%, 21.999%, 63%, 63.999%, 65%, 69.999%': {
+						opacity: '0.4',
+					},
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px #8B5CF6, 0 0 40px #8B5CF6, 0 0 60px #8B5CF6',
+					},
+					'50%': {
+						boxShadow: '0 0 10px #8B5CF6, 0 0 20px #8B5CF6, 0 0 30px #8B5CF6',
+					},
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				glitch: 'glitch 0.3s ease-in-out infinite alternate',
+				flicker: 'flicker 3s linear infinite',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
 			}
 		}
 	},
